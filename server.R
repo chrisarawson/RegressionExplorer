@@ -46,6 +46,7 @@ shinyServer(function(input, output) {
     text(3,60,paste("SS Res =",round(reg.anova$Sum[2],0)))
     text(5,60,paste("df Res = ",(reg.anova$Df[2])))
     text(7,60,paste("MS Res = ",round(reg.anova$Mean[2],0)))
+    text(2,275,paste("RSq = ", round(summary(reg.lm)$r.sq,3)))
     })
   
   output$SSMPlot <- renderPlot({
@@ -86,6 +87,7 @@ shinyServer(function(input, output) {
     text(3,60,paste("SS Reg =",round(reg.anova$Sum[1],0)))
     text(5,60,paste("df Reg = ",(reg.anova$Df[1])))
     text(7,60,paste("MS Reg = ",round(reg.anova$Mean[1],0)))
+    text(2,275,paste("RSq = ", round(summary(reg.lm)$r.sq,3)))
   })
   
     output$aovSummary = renderPrint(function() {
